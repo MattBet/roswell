@@ -51,3 +51,31 @@ body {
   opacity:1;
   background: rgba(0,0,0,0.3);
 }
+
+.about-overlay{
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+}
+
+#section-about{
+  font-family: 'Didact Gothic', sans-serif;
+}
+
+#section-about h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+{
+  font-weight: 300;
+  letter-spacing: 3px;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: white;
+}
+
+#section-about p
+{
+  font-weight: 100;
+  font-size: 17px;
+  color: white;
+}
