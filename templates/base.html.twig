@@ -2,24 +2,54 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Roswell{% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset("build/css/app.css") }}">
 
             <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+
+            <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
+            <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/bebusneuebold" type="text/css"/>
+
 
         {% endblock %}
     </head>
     <body>
     {{ include('header.html.twig') }}
         {% block body %}
-            <button class="btn btn-primary">test</button>
         {% endblock %}
         {% block javascripts %}
             <script src="{{ asset("build/js/app.js") }}"></script>
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            <script>
+            var video = document.getElementById("videobanner");
+            var btn = document.getElementById("playpausebtn");
+            var volumebtn = document.getElementById("volumebtn");
+
+            function videoFunction() {
+            if (!video.paused) {
+            video.pause();
+            btn.src="../img/play.png";
+            } else {
+            video.play();
+            btn.src="../img/pause.png";
+            }
+            }
+
+            function volumeFunction(){
+                if (video.muted === true){
+                    video.muted = false;
+                    volumebtn.src="../img/volume-on.png"
+                }
+                else
+                {
+                    video.muted = true;
+                    volumebtn.src="../img/volume-off.png"
+                }
+            }
+            </script>
         {% endblock %}
     </body>
 </html>
