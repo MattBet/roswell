@@ -9,6 +9,17 @@ body {
   overflow-x: hidden !important;
 }
 
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+
+a, a:hover, a:focus {
+  text-decoration: none;
+}
+
 #topNav{
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -207,8 +218,59 @@ a.bttn-dark {
   }
 }
 
-#section-newsletter h3{
-  font-family: 'BebasNeueBold';
+.btnSection{
+  padding: 10px 13px;
+  background: #7e7e7e;
+  border-radius: 20px;
+  color: #fff;
+  display: block;
+  font-family: normal 18px/16px 'bebas_neuebold', sans-serif;
+  text-transform: uppercase;
+}
+.section-header{
+  padding: 0 0 8px 0;
+
+  position: relative;
+  z-index: 2;
+}
+
+.section-header h1{
+  margin: 8px 0 0 0;
+  color: #000;
+  display: inline-block;
+  float: left;
+  font-family: normal 30px/22px 'bebas_neuebold', sans-serif;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+
+}
+
+.date{
+  margin: 0 0 5px 0;
+  color: #684b9f;
+  display: block;
+  font-family: normal 18px/14px 'bebas_neuebold', sans-serif;
+  text-transform: uppercase;
+}
+
+.news-title{
+  font: normal 36px/30px 'bebas_neuebold', sans-serif;
+  text-transform: uppercase;
+}
+
+.btnNews{
+  width: 100%;
+  padding: 23px 0;
+  background: black;
+  color: #fff;
+  display: block;
+  font-family: normal 24px/18px 'bebas_neuebold', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.btnNews:hover{
+  color: #fff;
 }
 
 #section-newsletter{
@@ -230,7 +292,7 @@ a.bttn-dark {
   }
 }
 
-input[type=text], input[type=email]{
+input[type=text], input[type=email], textarea{
   background: transparent;
   color: white;
   border: none;
@@ -249,4 +311,44 @@ input[type=text], input[type=email]{
   display: block;
   font-family: 'BebasNeueBold', sans-serif;
   text-transform: uppercase;
+}
+
+#section-post-edit{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url('../img/header.jpg') center center no-repeat;
+  background-size: cover;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right,#000000,#000000);
+    opacity: .8;
+  }
+  color: white;
+}
+
+#section-post-new{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url('../img/header.jpg') center center no-repeat;
+  background-size: cover;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right,#000000,#000000);
+    opacity: .8;
+  }
+  color: white;
 }

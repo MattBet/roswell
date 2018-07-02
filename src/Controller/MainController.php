@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Crew;
+use App\Entity\Post;
 use App\Entity\Subscribers;
 use App\Form\NewsletterType;
 use Symfony\Component\Routing\Annotation\Route;
@@ -17,6 +18,7 @@ class MainController extends Controller
     public function index(Request $request)
     {
         $crew = $this->getDoctrine()->getRepository(Crew::class)->findAll();
+        $posts = $this->getDoctrine()->getRepository(Post::class)->postByDesc();
 
         $sub = new Subscribers();
         $form = $this->createForm(NewsletterType::class, $sub);
@@ -31,9 +33,25 @@ class MainController extends Controller
 
             return $this->redirectToRoute('home');
         }
+
+        dump($posts);
         return $this->render('index.html.twig', [
             'crew' => $crew,
+            'posts' => $posts,
             'formNewsletter' => $form->createView(),
         ]);
+    }
+
+    /**
+     * @Route("post/{id}", name="post_show")
+     */
+    public function show($id, Request $request)
+    {
+
+        $post = $this->getDoctrine()->getRepository(Post::class)->find($id);
+
+        return $this->render('post/show.html.twig', array(
+            'post' => $post,
+        ));
     }
 }

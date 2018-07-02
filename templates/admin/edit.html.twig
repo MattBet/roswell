@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <section id="section-post-edit" class="pt-5">
+        <div class="container">
+    <div class="row">
+
+        <div class="col-lg-12">
+            {{ form_start(formEdit) }}
+            {{ form_widget(formEdit) }}
+            {{ form_end(formEdit) }}
+        </div>
+        </div>
+    </div>
+    </section>
+{% endblock %}

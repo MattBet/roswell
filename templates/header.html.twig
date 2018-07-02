@@ -1,4 +1,4 @@
-<section id="section-home">
+<section id="section-home" class="section">
     <header>
         <nav style="background: rgba(0,0,0, 0.6)" id="topNav" class="navbar navbar-expand-lg navbar-dark fixed-top">
                 <a href="" class="navbar-brand"><img style="width: 60px; height: auto;" src="../img/roswell-logo.png" alt=""></a>
@@ -7,13 +7,20 @@
                 </button>
                 <div id="myNav" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav ml-auto" id="nav-menu-list">
-                        <li class="nav-item"><a href="#section-home" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="#section-crew" class="nav-link">Le crew</a></li>
-                        <li class="nav-item"><a href="#section-newsletter" class="nav-link">Nous rejoindre</a></li>
+                        <li class="nav-item"><a href="/#section-home" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="/#section-crew" class="nav-link">Le crew</a></li>
+                        <li class="nav-item"><a href="/#section-newsletter" class="nav-link">Nous rejoindre</a></li>
                     </ul>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <ul class="nav navbar-nav ml-auto" id="social-icon-gp">
+                        <li class="nav-item"><a href="{{ path('admin') }}"><img src="../img/admin.png" alt=""></a></li>
+                        <li class="nav-item"><a href="{{ path('logout') }}"><img src="../img/logout.png" alt=""></a></li>
+                    </ul>
+                    {% endif %}
                     <ul class="nav navbar-nav ml-auto" id="social-icon-gp">
                         <li class="nav-item"><img style="cursor: pointer;" id="playpausebtn" onclick="videoFunction()" src="../img/pause.png"></li>
                         <li class="nav-item"><img style="cursor: pointer;" id="volumebtn" onclick="volumeFunction()" src="../img/volume-off.png"></li>
+
                     </ul>
                     <ul class="nav navbar-nav ml-auto" id="social-icon-gp">
                         <li class="nav-item"><a href="https://www.facebook.com/RoswellBdx/" class="nav-link"><img src="../img/facebook-logo.png" alt=""></a></li>
