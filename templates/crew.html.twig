@@ -3,17 +3,16 @@
                 <div class="row">
                     {% for membre in groupe %}
                         <div class="col-lg-4 p-0">
-                            <a href="#{{ membre.prenom }}Modal" data-toggle="modal">
                                 <div class="card card-crew border-0">
                                     <img class="card-img-top rounded-0" src="../img/crew/{{ membre.prenom|lower }}.jpg" alt="Card image cap">
                                     <div class="position-absolute card-crew-overlay">
                                         <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                            <a href="#{{ membre.prenom }}Modal" data-toggle="modal" class="card-btn">Le découvrir >></a>
                                             <h5 class="card-title">{{ membre.pseudo }}, {{ membre.age }}</h5>
                                             <p class="card-text card-crew-description">{{ membre.description }}</p>
                                         </div>
                                     </div>
                                 </div>
-                            </a>
                             <div id="{{ membre.prenom }}Modal" class="modal fade">
                                 <div class="modal-dialog">
                                     <div class="modal-content">

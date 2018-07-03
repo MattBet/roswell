@@ -9,26 +9,21 @@
         </div>
         <div class="row">
                     {% for post in posts %}
-                        <div class="col-lg-4 p-0">
+                        <div class="col-lg-4 p-1">
                         <article>
-                            <div class="card card-crew border-0">
-                                <img class="card-img-top rounded-0" src="../img/article/{{ post.image }}" alt="Card image cap">
-                                <div class="position-absolute card-crew-overlay">
-                                    <div class="card-img-overlay d-flex flex-column justify-content-end">
-                                        <h5 class="card-title">{{ post.title }}</h5>
-                                        <p class="card-text">{{ post.body }}</p>
-                                    </div>
+                            <div class="card bg-transparent text-white border-0 rounded-0">
+                                <div class="position-relative">
+                                <div  class="position-absolute fixed-bottom" style="padding: 1em; background: rgba(0,0,0,0.5);">test</div>
+                                <img class="card-img rounded-0" src="../img/article/{{ post.image }}" alt="{{ post.title }}">
+
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">{{ post.createdAt|date('F jS Y') }}</p>
+                                <h5 class="article-title">{{ post.title }}</h5>
+                                <p class="card-text text-truncate">{{ post.body }}</p>
+
                                 </div>
                             </div>
-                            {#
-                            <header>
-                                <span class="date">{{ post.createdAt|date('Y-m-d') }}</span>
-                                <h1 class="news-title">{{ post.title }}</h1>
-                            </header>
-                            <p>
-                                {{ post.body }}
-                            </p>
-                            <a class="btnNews" href="/post/{{ post.id }}" title="Voir plus">Voir plus</a>#}
                         </article>
                         </div>
                     {% endfor %}

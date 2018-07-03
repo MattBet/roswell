@@ -1,19 +1,10 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 body {
-  font-family: Raleway,sans-serif;
-  font-size: 14px;
-  line-height: 26px;
+  font-family: normal 14px/26px Raleway,sans-serif;
   color: #8d8d8d;
   font-weight: 400;
   overflow-x: hidden !important;
-}
-
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.1;
-  color: inherit;
 }
 
 a, a:hover, a:focus {
@@ -96,19 +87,37 @@ nav{
   margin: 1em;
 }
 
-.card-crew{
-  font-family: 'Didact Gothic', sans-serif;
-}
-
-.card-crew h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+.card-title
 {
-  font-weight: 300;
-  letter-spacing: 3px;
-  font-size: 30px;
+  font-weight: 200;
+  letter-spacing: 6px;
+  font-size: 22px;
   text-transform: uppercase;
   color: white;
+  font-family: 'BebasNeueBold', sans-serif;
 }
 
+.card-btn{
+  margin: auto;
+  padding: 0.7em;
+  text-align: center;
+  background: orange;
+  color:black;
+  transition: .6s ease;
+  text-transform: uppercase;
+  font-size: 20px;
+  border-width: 1px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  font-family: 'BebasNeueBold', sans-serif;
+
+}
+
+.card-btn:hover{
+  background: black;
+  color: orange;
+}
 .card-crew-description
 {
   font-weight: 100;
@@ -121,12 +130,13 @@ nav{
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 20%;
+  height: 100%;
 }
 
 .card-crew:hover .card-crew-overlay{
   opacity:1;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.8);
+  border: 2px solid orange;
 }
 
 .about-overlay{
@@ -275,6 +285,7 @@ a.bttn-dark {
 
 #section-newsletter{
   position: relative;
+  padding: 2em;
   width: 100%;
   height: 100%;
   background: url('../img/header.jpg') center center no-repeat;
@@ -288,10 +299,15 @@ a.bttn-dark {
     bottom: 0;
     left: 0;
     background-image: linear-gradient(to bottom right,#000000,#000000);
-    opacity: .8;
+    opacity: .9;
   }
 }
 
+#section-newsletter h3{
+  font-family: 'BebasNeueBold', sans-serif;
+  font-weight: 100;
+  padding: 1em;
+}
 input[type=text], input[type=email], textarea{
   background: transparent;
   color: white;
@@ -301,16 +317,29 @@ input[type=text], input[type=email], textarea{
 
 }
 
+input[type=text]:focus, input[type=email]:focus, textarea:focus{
+  background: transparent;
+  color: orange;
+  border: none;
+  border-bottom: 2px solid orange;
+  width: 100%;
+
+}
+
 .submitBtn{
-  width: 221px;
-  margin: 20px auto 30px auto;
-  padding: 20px 0;
-  background: #fff;
-  color: #353535;
-  font-size: 24px;
-  display: block;
-  font-family: 'BebasNeueBold', sans-serif;
+  margin-top: 1.5em;
+  padding: 0.6em 2em;
+  text-align: center;
+  background: orange;
+  color:black;
+  transition: .6s ease;
   text-transform: uppercase;
+  font-size: 25px;
+  border: 1px orange;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  font-family: 'BebasNeueBold', sans-serif;
 }
 
 #section-post-edit{
@@ -351,4 +380,14 @@ input[type=text], input[type=email], textarea{
     opacity: .8;
   }
   color: white;
+}
+
+.article-title{
+  font-family: 'BebasNeueBold', sans-serif;
+  text-transform: uppercase;
+}
+
+section header h1{
+  text-transform: uppercase;
+  font-family: 'BebasNeueBold', sans-serif;
 }
