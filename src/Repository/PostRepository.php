@@ -28,6 +28,7 @@ class PostRepository extends ServiceEntityRepository
         return $qb->execute();
     }
 
+
     public function latestPosts() : array
     {
         $qb = $this->createQueryBuilder('p')

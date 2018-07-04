@@ -22,28 +22,47 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="float-left">
+
+                                {% if prevPost %}
+                                    <a href="/post/{{ prevPost.id }}">
                             <img src="../img/left-chevron.png" alt="">
+                            <span>
+                                {{ prevPost.title }}
+                            </span>
+                                    </a>
+                                {% endif %}
+                            </a>
                         </div>
                         <div class="float-right">
+
+                                {% if nextPost %}
+                            <a href="/post/{{ nextPost.id }}">
+                                    <span>
+                                {{ nextPost.title }}
+                                </span>
                             <img src="../img/right-chevron.png" alt="">
+                            </a>
+                                {% endif %}
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 border-top-0 border-bottom-0 border-right-0 border">
-                <p>test</p>
-                <p>test</p>
-                <p>test</p>
-                <p>test</p>
-                <p>test</p>
-                <p>test</p>
-                <p>test</p>
-                <p>test</p>
-                <p>test</p>
-                <p>test</p>
-                <p>test</p>
-                <p>test</p>
-                <p>test</p>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>latest news</h1>
+                    </div>
+                </div>
+                {% for post in posts %}
+                    <div class="row pb-3">
+                        <div class="col-lg-5">
+                            <img class="img-fluid" src="../img/article/{{ post.image }}" alt="">
+                        </div>
+                        <div class="col-lg-7">
+                            {{ post.title }}
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>

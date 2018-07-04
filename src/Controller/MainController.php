@@ -47,11 +47,28 @@ class MainController extends Controller
      */
     public function show($id, Request $request)
     {
+        $posts = $this->getDoctrine()->getRepository(Post::class)->findAll();
+
+        $prevPost = $this->getDoctrine()->getRepository(Post::class)->find($id-1);
+
+        if (!$prevPost)
+        {
+            $prevPost = '';
+        }
+        $nextPost = $this->getDoctrine()->getRepository(Post::class)->find($id+1);
+
+        if (!$nextPost)
+        {
+            $nextPost = '';
+        }
 
         $post = $this->getDoctrine()->getRepository(Post::class)->find($id);
 
         return $this->render('post/show.html.twig', array(
             'post' => $post,
+            'posts' => $posts,
+            'prevPost' => $prevPost,
+            'nextPost' => $nextPost,
         ));
     }
 }
