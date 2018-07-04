@@ -12,16 +12,22 @@
                         <div class="col-lg-4 p-1">
                         <article>
                             <div class="card bg-transparent text-white border-0 rounded-0">
-                                <div class="position-relative">
-                                <div  class="position-absolute fixed-bottom" style="padding: 1em; background: rgba(0,0,0,0.5);">test</div>
-                                <img class="card-img rounded-0" src="../img/article/{{ post.image }}" alt="{{ post.title }}">
+                                <div class="position-relative custom-card-header">
 
+                                    <div  class="overlay"></div>
+                                    <a href="post/{{ post.id }}" class="btn-post" style="">Voir plus</a>
+                                    <div  class="position-absolute fixed-bottom bandeau-info">
+                                        <div class="float-left">test</div><div class="float-right">
+                                            <img src="../img/comment.png" alt="">
+                                        </div>
+                                    </div>
+
+                                    <img class="card-img rounded-0" src="../img/article/{{ post.image }}" alt="{{ post.title }}">
                                 </div>
                                 <div class="card-body">
-                                    <p class="card-text">{{ post.createdAt|date('F jS Y') }}</p>
-                                <h5 class="article-title">{{ post.title }}</h5>
-                                <p class="card-text text-truncate">{{ post.body }}</p>
-
+                                    <p class="card-text"><span style="margin: 0 7px 0 0;" class="align-top"><img src="../img/time.png" alt=""></span>{{ post.createdAt|date('F jS Y') }}</p>
+                                    <h5 class="article-title">{{ post.title }}</h5>
+                                    <p class="card-text text-truncate">{{ post.body }}</p>
                                 </div>
                             </div>
                         </article>

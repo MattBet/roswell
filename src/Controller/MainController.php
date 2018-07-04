@@ -18,7 +18,7 @@ class MainController extends Controller
     public function index(Request $request)
     {
         $crew = $this->getDoctrine()->getRepository(Crew::class)->findAll();
-        $posts = $this->getDoctrine()->getRepository(Post::class)->postByDesc();
+        $posts = $this->getDoctrine()->getRepository(Post::class)->latestPosts();
 
         $sub = new Subscribers();
         $form = $this->createForm(NewsletterType::class, $sub);
